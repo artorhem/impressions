@@ -1,0 +1,19 @@
+\section{Critique}
+This paper was published at FAST 2009, where it won the best paper award. Impressions was a project at the Advanced Systems Lab at University of Wisconsin - Madison that's headed by the Arpaci-Dusseaus. This group holds a formidable reputation for carrying interesting and novel research in file and storage systems - a reputation that I firmly believe in \footnote{at the time of writing this section.}
+
+Impressions was a project that was motivated by the lack of formal benchmarking practices in the space of file systems research. This is a well identified problem, and there has been much research that has tried to address, or at the least, quantify this problem. The problem has been targeted from two different, yet synergistic directions:
+\begin{itemize}
+\item The creation of more \emph{representative workloads} for benchmarking experiments. This involves the study of access patterns on production filesystems, and creating workload generators that mimic these access patterns. This appears to be a crowded research space, as can be seen by the sheer number of benchmarks studied by ~\cite{tarasov2011benchmarking}.
+\item Creating more representative filesystem state on which to run benchmarks. This is a combination of the memory state, the on-disk layout/ fragmentation of the filesystem, and the metadata of the file-system image itself. The cache effects and fragmentation effects have been well studied in prior research. The file-system images used for these studies have been based on ad-hoc and inaccurate assumptions. This is the central issue that this work seeks to address
+\end{itemize}
+
+The authors point out filesystem researchers rely upon non-standard and often arbitrary filesystem images to test the performance of their system, despite there being an abundance of empirical studies of file system contents and metadata. It is, therefore, difficult to substantiate the performance of the filesystem in a way that is demonstrably independent of the effects that can arise from file-system image.
+
+Impressions is a framework to generate \emph{representative, and statistically accurate file system images while ensuring complete reproducibility of the image}. The frmaework uses a lot of statistical methods to create the image, and the parameters used to create this image can be tweaked. Also, given the key parameters, it becomes trivial to reproduce the test image, thereby ensuring easy and robust reproducibility.
+
+
+What is good/bad about the experimental setup?
+How well was the research carried out? What results are presented?
+Do you believe the results? Why/Why not?
+What things might you have done differently?
+What lessons did you learn from reading this paper critically? 

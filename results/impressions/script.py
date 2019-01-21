@@ -1,11 +1,19 @@
-nums = {'pow1': 0, 'pow2':0, 'pow3':0, 'pow4':0, 'pow5':0, 'pow6':0, 'pow7':0, 'pow8':0, 'pow9':0, '1k':0, '2k':0, '4k':0, '8k':0, '16k':0 }
-with open('c_mod.csv') as f:
-    for line in f:
-        line.strip()
-	val = int(line)
-	if 0 <= val <=2:
-	    nums['pow1'] +=1
-        else:
-            pass
+import numbers as np
+num = {}
+for exponent in range(0, 32):
+    num[str(2**exponent)] = 0
 
-print nums
+with open('/home/puneet/scratch/impressions/results/impressions/c_mod.csv') as f:
+    count = 0
+    for line in f:
+        count += 1
+        line.strip()
+        val = int(line)
+        for i in range(1, 32):
+            if (2 ** (i - 1) <= val < 2 ** i):
+                num[str(2 ** (i - 1))] += 1
+                break
+
+
+for k in sorted(num.iterkeys()):
+    print k+','+str(num[k])
