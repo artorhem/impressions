@@ -5,7 +5,6 @@
 #define FILENAME_SIZE 100
 #define MY_BLOCK_SIZE 4096
 
-//#define PARENT_PATH "/nitin/beagle/impress_home"
 extern char PARENT_PATH[1024];
 
 // List of Special Flags

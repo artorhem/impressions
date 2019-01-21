@@ -247,7 +247,7 @@ int montecarlo(int numdirs) {
     srand(deseeder());
     int root=0; 
     long i=0, j=0;
-    char parent_path[1024], strerr[100];
+    char parent_path[1024], strerr[100]; //uninitialized
     int my_parent=0, parent_depth =0;
     for (i =0;i<numdirs; i++)
         Dirs[i].setid(i);

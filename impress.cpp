@@ -234,6 +234,7 @@ void init () {
     init_ext_popularity();
     
     print_debug(0, "fragstate : %f\n", IMP_input->Layoutscore);
+    
     if(IMP_input->Layoutscore < 1.0) {
         
         //initialize fragmentation files
@@ -502,7 +503,8 @@ int main(int argc, char * argv[]) {
     if(ACTUAL_LOG_CREATION) {
         char logfilename[100];
         sprintf(logfilename, "%s/log-%d", IMP_input->Actuallogfile, IMP_input->Numfiles);
-        if( !(fp_log = fopen(logfilename, "w"))) {
+        printf("%s",logfilename);
+	if( !(fp_log = fopen(logfilename, "w"))) {
             print_debug1(1, "Cannot create Log file, proceeding without logging\n");
             //exit(-1);
         }
