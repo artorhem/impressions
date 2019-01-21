@@ -3,7 +3,7 @@ num = {}
 for exponent in range(0, 32):
     num[str(2**exponent)] = 0
 
-with open('/home/puneet/scratch/impressions/results/impressions/c_mod.csv') as f:
+with open('/big_disk/puneet/courses/cpsc508/Assignment1/impressions-v1/results/native/c.csv') as f:
     count = 0
     for line in f:
         count += 1
